@@ -18,17 +18,16 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const styles = {
   container:{
-    height:'100vh',
-    width:'100vh',
+
     alignItems:'center'
   },
   card: {
-    maxWidth:'100vh' ,
+    flexGrow:1,
     margin:10
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   actions: {
     display: 'flex',
@@ -50,7 +49,6 @@ class DetailPage extends Component{
   constructor(props){
     super(props);
     this.state ={ item : null};
-
   }
   componentDidMount(){
     const _=require('underscore');
@@ -71,7 +69,7 @@ class DetailPage extends Component{
       <Card style={styles.card}>
         <CardHeader
           avatar={
-            <Avatar aria-label="Recipe" className={styles.avatar}>R</Avatar>
+            <Avatar aria-label="Recipe" style={styles.avatar}>R</Avatar>
           }
           action={
             <IconButton>
@@ -91,7 +89,7 @@ class DetailPage extends Component{
             {item.abstract}
           </Typography>
         </CardContent>
-        <CardActions className={styles.actions} disableActionSpacing>
+        <CardActions style={styles.actions} disableActionSpacing>
                 <IconButton aria-label="Add to favorites">
                   <FavoriteIcon />
                 </IconButton>
